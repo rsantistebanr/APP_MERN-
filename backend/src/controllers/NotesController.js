@@ -2,7 +2,10 @@
 const Note = require('../models/Note')
 
 
+
+
 const listNotes = async (req, res)=>{
+    console.log('URL_BACKEND: ',URL_BACKEND);
     const notes = await Note.find();//consulta todos los datos que existen
     res.json(notes);
 }
