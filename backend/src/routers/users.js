@@ -1,9 +1,14 @@
 const {Router} = require('express');
-const { route } = require('./notes');
 const router = Router();
+const UsersCtrl = require('../controllers/UsersController') 
 
-router.route('/')
-    .get((req,res)=>res.send('Hello, I am users'))
+router
+    .get('/', UsersCtrl.listUsers)
+    .post('/',UsersCtrl.createUser)
+    .get('/:id',UsersCtrl.listUserById)
+    .delete('/:id',UsersCtrl.deleteUser)
+    .put('/:id',UsersCtrl.updateUser)
+
 
 
 module.exports = router;

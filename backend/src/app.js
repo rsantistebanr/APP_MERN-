@@ -13,8 +13,8 @@ const bodyParser = require("body-parser");
 app.use(express.json());
 
 //routes
-app.use('/users', usersRouter)
-app.use('/notes', notesRouter)
+app.use('/api/users', usersRouter)
+app.use('/api/notes', notesRouter)
 
 //exporto el modulo
 module.exports = app;
